@@ -1,0 +1,14 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Smoke Test" parallel="false" verbose="2">
+    <listeners>
+        <listener class-name="main.java.utils.SuiteListener"/>
+    </listeners>
+    <parameter name="email" value="apurba.panja@tcs.test"/>
+    <parameter name="password" value="Tosca1234!"/>
+    <parameter name="browserName" value="chrome"/>
+    <test name="Test Order Blue Jeans">
+        <classes>
+            <class name="test.java.testclass.OrderBlueJeansTest"/>
+        </classes>
+    </test>
+</suite>
