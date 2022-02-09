@@ -1,7 +1,10 @@
 package test.java.testclass;
 
 import main.java.pagefactory.*;
+import main.java.utils.ExcelUtils;
 import org.testng.annotations.*;
+
+import java.io.File;
 
 public class OrderBlueJeansTest extends BaseTest {
 
@@ -26,13 +29,16 @@ public class OrderBlueJeansTest extends BaseTest {
 
     @Test(priority = 1)
     @Parameters({"email", "password"})
-    public void loginWebShop(String email, String password) {
+    public void loginWebShop(String email, String password) throws Exception {
         homePage.navigateToLoginPage();
 
         loginPage.enterEmail(email);
         loginPage.enterPassword(password);
         loginPage.clickRememberMeCheckbox();
         loginPage.clickLoginButton();
+
+        String filepath = System.getProperty("user.dir") + File.separator + "testdata" + File.separator + "UserData.xlsx";
+        Object[][] data = ExcelUtils.getExcelData(filepath, "Sheet1");
     }
 
     @Test(priority = 2)
@@ -99,4 +105,6 @@ public class OrderBlueJeansTest extends BaseTest {
     public void logoutWebShop() {
         homePage.logoutWebshop();
     }
+
+
 }

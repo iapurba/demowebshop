@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 public class OrderSuccessPageFactory {
 	WebDriver driver;
 	
-	@FindBy(xpath="//input[@value='Continue']")
+	@FindBy(xpath="//input[starts-with(@class, 'button-2') and @value='Continue']")
 	private WebElement orderSuccessContinueBtn;
 	
 //	Constructor

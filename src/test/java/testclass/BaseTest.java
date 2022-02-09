@@ -16,7 +16,9 @@ import org.testng.annotations.*;
 
 import java.io.File;
 import java.lang.reflect.Method;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 
 public class BaseTest {
     public static WebDriver driver;
@@ -45,8 +47,9 @@ public class BaseTest {
         driver.get(baseURL);
 
 //      Configuring Extent Report file
+        String timestamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
         String filepath = System.getProperty("user.dir") + File.separator + "reports"
-                + File.separator + "demowebshop-test-report.html";
+                + File.separator + "demowebshop-test-report" + timestamp + ".html";
         htmlReporter = new ExtentHtmlReporter(filepath);
         htmlReporter.config().setEncoding("UTF-8");
         htmlReporter.config().setDocumentTitle("Demowebshop Automation Report");
@@ -89,4 +92,5 @@ public class BaseTest {
         Thread.sleep(3000);
         driver.quit();
     }
+
 }
