@@ -1,13 +1,8 @@
 package test.java.testclass;
 
-import java.time.Duration;
-
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import main.java.pagefactory.*;
+import test.java.pagefactory.*;
 
 public class ReorderBlueJeansTest extends BaseTest{
 

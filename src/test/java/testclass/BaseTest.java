@@ -29,6 +29,7 @@ public class BaseTest {
     static ExtentTest logger;
 
     private void setupWebDriver(String browserName) {
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "/drivers/chromedriver");
         if (browserName.equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver();
         } else if (browserName.equalsIgnoreCase("firefox")) {

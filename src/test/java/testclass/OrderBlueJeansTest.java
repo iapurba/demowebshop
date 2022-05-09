@@ -1,10 +1,8 @@
 package test.java.testclass;
 
-import main.java.pagefactory.*;
-import main.java.utils.ExcelUtils;
+import test.java.pagefactory.*;
 import org.testng.annotations.*;
 
-import java.io.File;
 
 public class OrderBlueJeansTest extends BaseTest {
 
@@ -36,9 +34,6 @@ public class OrderBlueJeansTest extends BaseTest {
         loginPage.enterPassword(password);
         loginPage.clickRememberMeCheckbox();
         loginPage.clickLoginButton();
-
-        String filepath = System.getProperty("user.dir") + File.separator + "testdata" + File.separator + "UserData.xlsx";
-        Object[][] data = ExcelUtils.getExcelData(filepath, "Sheet1");
     }
 
     @Test(priority = 2)

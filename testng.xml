@@ -1,7 +1,7 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name="Smoke Test" parallel="false" verbose="2">
     <listeners>
-        <listener class-name="main.java.utils.SuiteListener"/>
+        <listener class-name="test.java.utils.SuiteListener"/>
     </listeners>
     <parameter name="browserName" value="chrome"/>
     <parameter name="email" value="apurba.panja@tcs.test"/>
